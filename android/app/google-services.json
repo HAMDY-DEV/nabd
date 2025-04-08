@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "245053317389",
+    "firebase_url": "https://sehety-1-default-rtdb.firebaseio.com",
+    "project_id": "sehety-1",
+    "storage_bucket": "sehety-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245053317389:android:d9c8e86742ca0e88a69044",
+        "android_client_info": {
+          "package_name": "com.example.nabd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKyt3YDi9NC4uI7ZW9MiyUBBJm6wehczM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245053317389:android:65a5315b050eed80a69044",
+        "android_client_info": {
+          "package_name": "com.example.sehety"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKyt3YDi9NC4uI7ZW9MiyUBBJm6wehczM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
