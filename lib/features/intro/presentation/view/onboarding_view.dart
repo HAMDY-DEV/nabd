@@ -1,7 +1,6 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:nabd/core/constants/assets_image.dart';
+import 'package:nabd/core/constants/assets_images.dart';
 import 'package:nabd/core/functions/routing.dart';
 import 'package:nabd/core/util/colors.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
@@ -59,15 +58,15 @@ class _OnboardingViewState extends State<OnboardingView> {
                   },
                   children: [
                     Image.asset(
-                      ImageAssets.imagesOnboarding2,
+                      Assets.onboarding2,
                       fit: BoxFit.cover,
                     ),
                     Image.asset(
-                      ImageAssets.imagesOnboarding3,
+                      Assets.onboarding3,
                       fit: BoxFit.cover,
                     ),
                     Image.asset(
-                      ImageAssets.imagesOnboarding1,
+                      Assets.onboarding1,
                       fit: BoxFit.cover,
                     ),
                   ],

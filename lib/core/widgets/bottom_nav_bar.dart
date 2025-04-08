@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nabd/core/constants/assets_svg.dart';
+import 'package:nabd/core/constants/assets_images.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
 import 'package:nabd/features/home/presentation/view/home_view.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
@@ -83,7 +83,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               width: 30.w(context),
               height: 30.h(context),
               fit: BoxFit.fill,
-              SvgAssets.svgHome,
+              Assets.home,
             ),
             title: Text('Home', style: TextStyle(color: AppColors.whiteColor)),
           ),
@@ -92,7 +92,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               width: 30.w(context),
               height: 30.h(context),
               fit: BoxFit.fill,
-              SvgAssets.svgChatBubble,
+              Assets.chatBubble,
             ),
             title: Text('Chat', style: TextStyle(color: AppColors.whiteColor)),
           ),
@@ -101,7 +101,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               width: 30.w(context),
               height: 30.h(context),
               fit: BoxFit.fill,
-              SvgAssets.svgSearch,
+              Assets.search,
             ),
             title: Text(
               'Search',
@@ -113,7 +113,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               width: 30.w(context),
               height: 30.h(context),
               fit: BoxFit.fill,
-              SvgAssets.svgPerson,
+              Assets.person,
             ),
             title: Text(
               'Profile',

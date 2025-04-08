@@ -8,6 +8,7 @@ import 'package:nabd/core/widgets/custom_text_form_field.dart';
 import 'package:nabd/core/widgets/icon_text_botton.dart';
 import 'package:nabd/features/auth/presentation/widget/custom_button_auth.dart';
 
+// ignore: must_be_immutable
 class RegistrationView extends StatelessWidget {
   RegistrationView({super.key});
 

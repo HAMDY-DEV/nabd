@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:nabd/core/util/colors.dart';
 
-showshowSnackBar({
-  context,
-  text,
-  color,
-}) {
-  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+showsSnackBar({required context, required text, Color? color}) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
       duration: const Duration(seconds: 1),
-      backgroundColor: AppColors.primaryColor,
-      content: Text(text)));
+      backgroundColor: color ?? AppColors.primaryColor,
+      content: Text(text),
+    ),
+  );
 }
 
 // showLoading({required context}) {

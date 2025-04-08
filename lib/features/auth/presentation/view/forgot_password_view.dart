@@ -10,6 +10,7 @@ import 'package:nabd/core/widgets/icon_text_botton.dart';
 import 'package:nabd/features/auth/presentation/view/registration_view.dart';
 import 'package:nabd/features/auth/presentation/widget/custom_button_auth.dart';
 
+// ignore: must_be_immutable
 class ForgotPasswordView extends StatelessWidget {
   ForgotPasswordView({super.key});
 

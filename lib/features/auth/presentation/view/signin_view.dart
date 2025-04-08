@@ -11,6 +11,7 @@ import 'package:nabd/features/auth/presentation/view/forgot_password_view.dart';
 import 'package:nabd/features/auth/presentation/view/registration_view.dart';
 import 'package:nabd/features/auth/presentation/widget/custom_button_auth.dart';
 
+// ignore: must_be_immutable
 class SigninView extends StatelessWidget {
   SigninView({super.key});
 

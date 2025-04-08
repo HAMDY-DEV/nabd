@@ -52,6 +52,31 @@ TextStyle getBodyStyle(
   );
 }
 
+
+TextStyle getSmallStyle(
+  context, {
+  Color? color,
+  FontWeight? fontWeight,
+  double? fontSize,
+  String? fontFamily,
+  double? letterSpacing,
+  double? height,
+}) {
+  var modeTheme = Theme.of(context).colorScheme.onSurface;
+  return TextStyle(
+    // fontFamily: GoogleFonts.poppins().fontFamily,
+    height: height ?? 0,
+    fontSize: fontSize ?? 10.sp(context),
+    fontWeight: fontWeight ?? FontWeight.normal,
+    color: color ?? modeTheme,
+    letterSpacing: letterSpacing,
+    fontFamily:
+        isArabic()
+            ? GoogleFonts.cairo().fontFamily
+            : fontFamily ?? GoogleFonts.sourceSans3().fontFamily,
+  );
+}
+
 TextStyle getDecorationStyle(
   context, {
   Color? color,
@@ -82,26 +107,3 @@ TextStyle getDecorationStyle(
   );
 }
 
-TextStyle getSmallStyle(
-  context, {
-  Color? color,
-  FontWeight? fontWeight,
-  double? fontSize,
-  String? fontFamily,
-  double? letterSpacing,
-  double? height,
-}) {
-  var modeTheme = Theme.of(context).colorScheme.onSurface;
-  return TextStyle(
-    // fontFamily: GoogleFonts.poppins().fontFamily,
-    height: height ?? 0,
-    fontSize: fontSize ?? 10.sp(context),
-    fontWeight: fontWeight ?? FontWeight.normal,
-    color: color ?? modeTheme,
-    letterSpacing: letterSpacing,
-    fontFamily:
-        isArabic()
-            ? GoogleFonts.cairo().fontFamily
-            : fontFamily ?? GoogleFonts.sourceSans3().fontFamily,
-  );
-}

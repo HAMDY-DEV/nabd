@@ -3,6 +3,8 @@ import 'package:gap/gap.dart';
 import 'package:nabd/core/util/colors.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
 import 'package:nabd/core/util/text_style.dart';
+import 'package:nabd/features/home/presentation/widgets/header_home.dart';
+import 'package:nabd/features/home/presentation/widgets/post_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -10,11 +12,11 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryColor,
+      backgroundColor: AppColors.scaffoldColor,
       appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
         automaticallyImplyLeading: false,
         centerTitle: false,
+        forceMaterialTransparency: true,
         title: Text(
           'NABD',
           style: getTitleStyle(context, color: AppColors.primaryColor),
@@ -32,15 +34,37 @@ class HomeView extends StatelessWidget {
         ],
       ),
       body: Container(
-        margin: EdgeInsets.only(bottom: 25.h(context)),
-        decoration: BoxDecoration(
-          color: AppColors.whiteColor,
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(40.r(context)),
-            bottomRight: Radius.circular(40.r(context)),
+        color: AppColors.primaryColor,
+        child: Container(
+          margin: EdgeInsets.only(bottom: 25.h(context)),
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+            color: AppColors.scaffoldColor,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(40.r(context)),
+              bottomRight: Radius.circular(40.r(context)),
+            ),
+          ),
+          child: Column(
+            children: [
+              Gap(5.h(context)),
+              // header home
+              HeaderHome(),
+              Gap(10.h(context)),
+              // posts
+              Expanded(
+                child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 15.w(context)),
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return PostCard();
+                  },
+                  separatorBuilder: (context, index) => Gap(20.h(context)),
+                ),
+              ),
+            ],
           ),
         ),
-        child: Center(child: Text('Home')),
       ),
     );
   }

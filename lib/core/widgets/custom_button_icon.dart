@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nabd/core/util/colors.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
 import 'package:nabd/core/util/text_style.dart';
@@ -66,16 +65,16 @@ class CustomButtonIcon extends StatelessWidget {
             children: [
               startIcon == null
                   ? SizedBox()
-                  : Image.asset(
-                      width: 24,
-                      startIcon!,
-                    ),
+                  : Image.asset(width: 24, startIcon!),
               Gap(5.w(context)),
               Text(
                 text,
-                style: style ??
-                    getTitleStyle(context,
-                        color: textColor ?? AppColors.whiteColor),
+                style:
+                    style ??
+                    getTitleStyle(
+                      context,
+                      color: textColor ?? AppColors.whiteColor,
+                    ),
               ),
             ],
           ),
