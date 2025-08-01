@@ -3,11 +3,8 @@ import 'package:nabd/core/util/colors.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
 import 'package:nabd/core/util/text_style.dart';
 
-
-
-// ignore: must_be_immutable
 class CustomButton extends StatelessWidget {
-  CustomButton({
+  const CustomButton({
     super.key,
     this.height,
     this.width,
@@ -21,7 +18,7 @@ class CustomButton extends StatelessWidget {
     this.boxShadowColor,
     required this.text,
   });
-  TextStyle? style;
+  final TextStyle? style;
   final double? height;
   final double? width;
   final double? borderWidth;
@@ -32,8 +29,8 @@ class CustomButton extends StatelessWidget {
   final Color? boxShadowColor;
   final Color? borderColor;
   final Color? textColor;
-  void Function()? onTap;
-  double? borderRadius;
+  final void Function()? onTap;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +47,7 @@ class CustomButton extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: boxShadowColor ?? AppColors.blackColor.withOpacity(0.1),
+              color: boxShadowColor ?? AppColors.blackColor.withAlpha(25),
               blurRadius: 5,
               offset: const Offset(0, 3), // changes position of shadow
             ),
@@ -61,9 +58,12 @@ class CustomButton extends StatelessWidget {
         child: FittedBox(
           child: Text(
             text,
-            style: style ??
-                getTitleStyle(context,
-                    color: textColor ?? AppColors.whiteColor),
+            style:
+                style ??
+                getTitleStyle(
+                  context,
+                  color: textColor ?? AppColors.whiteColor,
+                ),
           ),
         ),
       ),

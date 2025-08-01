@@ -7,12 +7,18 @@ import 'package:nabd/core/util/colors.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
 import 'package:nabd/core/util/text_style.dart';
 import 'package:nabd/features/intro/presentation/view/splash_screen_view.dart';
+import 'package:nabd/firebase_options.dart';
 import 'package:nabd/generated/l10n.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   Bloc.observer = MyBlocObserver();
+  await FirebaseAppCheck.instance.activate(
+    androidProvider: AndroidProvider.debug,
+  );
   runApp(const NabdApp());
 }
 
@@ -60,7 +66,6 @@ class NabdApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-
       home: SplashScreenView(),
     );
   }

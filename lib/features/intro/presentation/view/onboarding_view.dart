@@ -1,11 +1,12 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:nabd/core/constants/assets_image.dart';
+import 'package:nabd/core/constants/assets_images.dart';
 import 'package:nabd/core/functions/routing.dart';
 import 'package:nabd/core/util/colors.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
 import 'package:nabd/core/util/text_style.dart';
+import 'package:nabd/features/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:nabd/features/auth/presentation/view/signin_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -58,18 +59,9 @@ class _OnboardingViewState extends State<OnboardingView> {
                     });
                   },
                   children: [
-                    Image.asset(
-                      ImageAssets.imagesOnboarding2,
-                      fit: BoxFit.cover,
-                    ),
-                    Image.asset(
-                      ImageAssets.imagesOnboarding3,
-                      fit: BoxFit.cover,
-                    ),
-                    Image.asset(
-                      ImageAssets.imagesOnboarding1,
-                      fit: BoxFit.cover,
-                    ),
+                    Image.asset(Assets.onboarding2, fit: BoxFit.cover),
+                    Image.asset(Assets.onboarding3, fit: BoxFit.cover),
+                    Image.asset(Assets.onboarding1, fit: BoxFit.cover),
                   ],
                 ),
                 if (page != 2)
@@ -141,7 +133,15 @@ class _OnboardingViewState extends State<OnboardingView> {
                   curve: Curves.easeInOut,
                 );
               } else {
-                navigatorToAndRemoveUntil(context, SigninView());
+                navigatorToAndRemoveUntil(
+                  context,
+                  BlocProvider(
+                    create: (context) => 
+                    LoginCubit(),
+                    child: 
+                    SigninView(),
+                  ),
+                );
               }
             },
             child: Container(

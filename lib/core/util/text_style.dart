@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:nabd/core/functions/isArabic.dart';
+import 'package:nabd/core/functions/is_arabic.dart';
 import 'package:nabd/core/util/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
 
 TextStyle getTitleStyle(
-  context, {
+  BuildContext context, {
   Color? color,
   FontWeight? fontWeight,
   double? fontSize,
@@ -29,7 +29,7 @@ TextStyle getTitleStyle(
 }
 
 TextStyle getBodyStyle(
-  context, {
+  BuildContext context, {
   Color? color,
   FontWeight? fontWeight,
   double? fontSize,
@@ -52,8 +52,33 @@ TextStyle getBodyStyle(
   );
 }
 
+
+TextStyle getSmallStyle(
+  BuildContext context, {
+  Color? color,
+  FontWeight? fontWeight,
+  double? fontSize,
+  String? fontFamily,
+  double? letterSpacing,
+  double? height,
+}) {
+  var modeTheme = Theme.of(context).colorScheme.onSurface;
+  return TextStyle(
+    // fontFamily: GoogleFonts.poppins().fontFamily,
+    height: height ?? 0,
+    fontSize: fontSize ?? 10.sp(context),
+    fontWeight: fontWeight ?? FontWeight.normal,
+    color: color ?? modeTheme,
+    letterSpacing: letterSpacing,
+    fontFamily:
+        isArabic()
+            ? GoogleFonts.cairo().fontFamily
+            : fontFamily ?? GoogleFonts.sourceSans3().fontFamily,
+  );
+}
+
 TextStyle getDecorationStyle(
-  context, {
+  BuildContext context, {
   Color? color,
   FontWeight? fontWeight,
   double? fontSize,
@@ -82,26 +107,3 @@ TextStyle getDecorationStyle(
   );
 }
 
-TextStyle getSmallStyle(
-  context, {
-  Color? color,
-  FontWeight? fontWeight,
-  double? fontSize,
-  String? fontFamily,
-  double? letterSpacing,
-  double? height,
-}) {
-  var modeTheme = Theme.of(context).colorScheme.onSurface;
-  return TextStyle(
-    // fontFamily: GoogleFonts.poppins().fontFamily,
-    height: height ?? 0,
-    fontSize: fontSize ?? 10.sp(context),
-    fontWeight: fontWeight ?? FontWeight.normal,
-    color: color ?? modeTheme,
-    letterSpacing: letterSpacing,
-    fontFamily:
-        isArabic()
-            ? GoogleFonts.cairo().fontFamily
-            : fontFamily ?? GoogleFonts.sourceSans3().fontFamily,
-  );
-}

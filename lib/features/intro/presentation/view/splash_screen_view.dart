@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nabd/core/constants/assets_image.dart';
-import 'package:nabd/core/constants/assets_svg.dart';
+import 'package:nabd/core/constants/assets_images.dart';
+
 import 'package:nabd/core/functions/routing.dart';
 import 'package:nabd/core/util/colors.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
@@ -13,16 +13,16 @@ class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});
 
   @override
-  _SplashScreenViewState createState() => _SplashScreenViewState();
+  SplashScreenViewState createState() => SplashScreenViewState();
 }
 
-class _SplashScreenViewState extends State<SplashScreenView> {
+class SplashScreenViewState extends State<SplashScreenView> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     Future.delayed(const Duration(seconds: 2), () {
+      if (!mounted) return;
       navigatorToAndRemoveUntil(context, const OnboardingView());
     });
   }
@@ -47,7 +47,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(ImageAssets.imagesBackgroundSplash),
+                    image: AssetImage(Assets.backgroundSplash),
                   ),
                 ),
               ),
@@ -59,7 +59,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
               bottom: 250.h(context),
               child: SvgPicture.asset(
                 fit: BoxFit.cover,
-                SvgAssets.svgNabdLogo,
+                Assets.nabdLogo,
                 width: 300.w(context),
                 height: 300.h(context),
               ),
@@ -73,7 +73,6 @@ class _SplashScreenViewState extends State<SplashScreenView> {
                 textAlign: TextAlign.center,
                 style: getBodyStyle(
                   context,
-
                   fontSize: 15.sp(context),
                   fontWeight: FontWeight.bold,
                   color: AppColors.whiteColor,

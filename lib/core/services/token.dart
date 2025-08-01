@@ -33,7 +33,7 @@ class Token {
     return _sharedToken!.getString('token');
   }
 
-  static removeToken() {
+  static void removeToken() {
     if (_sharedToken == null) {
       throw Exception(
           "SharedPreferences is not initialized. Call Token.init() first.");

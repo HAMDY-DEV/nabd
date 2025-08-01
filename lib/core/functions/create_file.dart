@@ -1,15 +1,18 @@
+import 'dart:developer';
 import 'dart:io';
 
 void main() {
   // مسار المشروع الحالي
   final projectPath = "${Directory.current.path}/lib";
 
+  String nameFile = 'create_post';
+
   // قائمة المجلدات التي سيتم إنشاؤها
   final directories = [
-    '$projectPath/features/home/models',
-    '$projectPath/features/home/presentation/view',
-    '$projectPath/features/home/presentation/widgets',
-    '$projectPath/features/home/presentation/manager',
+    '$projectPath/features/$nameFile/models',
+    '$projectPath/features/$nameFile/presentation/view',
+    '$projectPath/features/$nameFile/presentation/widgets',
+    '$projectPath/features/$nameFile/presentation/manager',
   ];
 
   // حلقة لإنشاء كل المجلدات
@@ -19,11 +22,10 @@ void main() {
     // التحقق من وجود المجلد، وإن لم يكن موجودًا يتم إنشاؤه
     if (!directory.existsSync()) {
       directory.createSync(recursive: true);
-      print('Created: $dir ✔');
+      log('Created: $dir ✔');
     } else {
-      print('Directory already exists: $dir ');
+      log('Directory already exists: $dir ');
     }
   }
-
-  print('تم إنشاء المجلدات بنجاح ✔');
+  log('تم إنشاء المجلدات بنجاح ✔');
 }

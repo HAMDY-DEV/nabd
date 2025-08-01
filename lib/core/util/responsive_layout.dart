@@ -6,10 +6,11 @@ class Rsp {
   static double? _baseWidth;
   static double? _baseHeight;
 
-  static void initRsp(context) {
+  static void initRsp(BuildContext context) {
     _baseHeight = MediaQuery.sizeOf(context).height;
     _baseWidth = MediaQuery.sizeOf(context).width;
   }
+
    static bool isIOS() {
     return Platform.isIOS ? true : false;
   }

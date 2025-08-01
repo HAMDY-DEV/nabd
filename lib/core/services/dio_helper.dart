@@ -4,7 +4,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioHelper {
   static Dio? dio;
-  static init() {
+  static void init() {
     dio = Dio(BaseOptions(
       baseUrl: Endpoints.baseUrl,
     ));
