@@ -13,16 +13,16 @@ class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});
 
   @override
-  _SplashScreenViewState createState() => _SplashScreenViewState();
+  SplashScreenViewState createState() => SplashScreenViewState();
 }
 
-class _SplashScreenViewState extends State<SplashScreenView> {
+class SplashScreenViewState extends State<SplashScreenView> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     Future.delayed(const Duration(seconds: 2), () {
+      if (!mounted) return;
       navigatorToAndRemoveUntil(context, const OnboardingView());
     });
   }
@@ -73,7 +73,6 @@ class _SplashScreenViewState extends State<SplashScreenView> {
                 textAlign: TextAlign.center,
                 style: getBodyStyle(
                   context,
-
                   fontSize: 15.sp(context),
                   fontWeight: FontWeight.bold,
                   color: AppColors.whiteColor,

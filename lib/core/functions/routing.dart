@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void navigatorTo(context, view) {
+void navigatorTo(BuildContext context, view) {
   Navigator.of(context).push(MaterialPageRoute(
     builder: (context) {
       return view;
@@ -8,7 +8,7 @@ void navigatorTo(context, view) {
   ));
 }
 
-void navigatorToReplacement(context, view) {
+void navigatorToReplacement(BuildContext context, view) {
   Navigator.of(context).pushReplacement(MaterialPageRoute(
     builder: (context) {
       return view;
@@ -16,7 +16,7 @@ void navigatorToReplacement(context, view) {
   ));
 }
 
-void navigatorToAndRemoveUntil(context, view) {
+void navigatorToAndRemoveUntil(BuildContext context, view) {
   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
     builder: (context) {
       return view;

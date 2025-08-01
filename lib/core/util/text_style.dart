@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:nabd/core/functions/isArabic.dart';
+import 'package:nabd/core/functions/is_arabic.dart';
 import 'package:nabd/core/util/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
 
 TextStyle getTitleStyle(
-  context, {
+  BuildContext context, {
   Color? color,
   FontWeight? fontWeight,
   double? fontSize,
@@ -29,7 +29,7 @@ TextStyle getTitleStyle(
 }
 
 TextStyle getBodyStyle(
-  context, {
+  BuildContext context, {
   Color? color,
   FontWeight? fontWeight,
   double? fontSize,
@@ -54,7 +54,7 @@ TextStyle getBodyStyle(
 
 
 TextStyle getSmallStyle(
-  context, {
+  BuildContext context, {
   Color? color,
   FontWeight? fontWeight,
   double? fontSize,
@@ -78,7 +78,7 @@ TextStyle getSmallStyle(
 }
 
 TextStyle getDecorationStyle(
-  context, {
+  BuildContext context, {
   Color? color,
   FontWeight? fontWeight,
   double? fontSize,

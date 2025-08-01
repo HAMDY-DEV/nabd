@@ -51,7 +51,7 @@ class CustomButtonIcon extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: boxShadowColor ?? AppColors.blackColor.withOpacity(0.1),
+              color: boxShadowColor ?? AppColors.blackColor.withAlpha(25),
               spreadRadius: 5,
               blurRadius: 7,
               offset: const Offset(0, 3), // changes position of shadow

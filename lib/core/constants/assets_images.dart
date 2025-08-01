@@ -14,6 +14,14 @@ class Assets {
   /// assets/copy.svg
   static const String copy = "assets/copy.svg";
 
+  /// Assets for heart
+  /// assets/heart.png
+  static const String heart = "assets/heart.png";
+
+  /// Assets for heartBorder
+  /// assets/heart__border.png
+  static const String heartBorder = "assets/heart__border.png";
+
   /// Assets for home
   /// assets/home.svg
   static const String home = "assets/home.svg";
