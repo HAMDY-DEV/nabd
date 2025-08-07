@@ -56,7 +56,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: _buildScreens()[_tabIndex],
+      body: IndexedStack(index: _tabIndex, children: _buildScreens()),
 
       bottomNavigationBar: StylishBottomBar(
         backgroundColor: AppColors.primaryColor,

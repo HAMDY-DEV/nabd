@@ -103,7 +103,9 @@ class HomeView extends StatelessWidget {
                             (context, index) => Gap(20.h(context)),
                       );
                     } else {
-                      return Center(child: Text('Something went wrong'));
+                      return ErrorRetryWidget(
+                        onRetry: () => cubit.listenToPosts(),
+                      );
                     }
                   },
                 ),
@@ -111,6 +113,31 @@ class HomeView extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ErrorRetryWidget extends StatelessWidget {
+  final VoidCallback onRetry;
+
+  const ErrorRetryWidget({super.key, required this.onRetry});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.error_outline, size: 60, color: Colors.red),
+          const SizedBox(height: 10),
+          const Text('حدث خطأ ما', style: TextStyle(fontSize: 18)),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: onRetry,
+            child: const Text('إعادة المحاولة'),
+          ),
+        ],
       ),
     );
   }

@@ -2,6 +2,8 @@ class PostModel {
   final String keyPost;
   final String description;
   final String creatorId;
+  final String creatorName;
+  final String creatorPhoto;
   final String time;
   final String photo;
   final List<dynamic> likes;
@@ -12,6 +14,8 @@ class PostModel {
     required this.keyPost,
     required this.description,
     required this.creatorId,
+    required this.creatorName,
+    required this.creatorPhoto,
     required this.time,
     required this.photo,
     required this.likes,
@@ -24,6 +28,8 @@ class PostModel {
       keyPost: data['keyPost'] ?? '',
       description: data['description'] ?? '',
       creatorId: data['creatorId'] ?? '',
+      creatorName: data['creatorName'] ?? '',
+      creatorPhoto: data['creatorPhoto'] ?? '',
       time: data['time'] ?? '',
       photo: data['photo'] ?? '',
       likes: List.from(data['likes'] ?? []),

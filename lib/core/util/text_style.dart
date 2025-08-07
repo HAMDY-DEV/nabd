@@ -105,5 +105,11 @@ TextStyle getDecorationStyle(
             ? GoogleFonts.cairo().fontFamily
             : fontFamily ?? GoogleFonts.sourceSans3().fontFamily,
   );
+
+  
+}
+TextDirection getTextDirection(String text) {
+  final RegExp arabic = RegExp(r'[\u0600-\u06FF]');
+  return arabic.hasMatch(text) ? TextDirection.rtl : TextDirection.ltr;
 }
 

@@ -8,12 +8,8 @@ final class HomePostSuccess extends HomeState {}
 
 final class HomePostError extends HomeState {}
 
-final class CreatorPostLoading extends HomeState {}
+final class LikePostLoading extends HomeState {}
 
-final class CreatorPostSuccess extends HomeState {
-  Map<String, dynamic> userData;
+final class LikePostSuccess extends HomeState {}
 
-  CreatorPostSuccess({required this.userData});
-}
-
-final class CreatorPostError extends HomeState {}
+final class LikePostError extends HomeState {}
