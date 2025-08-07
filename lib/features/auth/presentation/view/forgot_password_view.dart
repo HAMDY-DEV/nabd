@@ -11,6 +11,7 @@ import 'package:nabd/core/widgets/custom_text_form_field.dart';
 import 'package:nabd/core/widgets/icon_text_botton.dart';
 import 'package:nabd/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
 import 'package:nabd/features/auth/presentation/manager/forgot_password_cubit/forgot_password_state.dart';
+import 'package:nabd/features/auth/presentation/manager/registration_cubit/registration_cubit.dart';
 import 'package:nabd/features/auth/presentation/view/registration_view.dart';
 import 'package:nabd/features/auth/presentation/widget/custom_button_auth.dart';
 
@@ -212,7 +213,14 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                             recognizer:
                                 TapGestureRecognizer()
                                   ..onTap = () {
-                                    navigatorTo(context, RegistrationView());
+                                    navigatorToReplacement(
+                                      context,
+                                      BlocProvider(
+                                        create:
+                                            (context) => RegistrationCubit(),
+                                        child: RegistrationView(),
+                                      ),
+                                    );
                                   },
                           ),
                         ],

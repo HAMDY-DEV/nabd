@@ -1,11 +1,10 @@
-import 'dart:developer';
 import 'dart:io';
 
 void main() {
   // مسار المشروع الحالي
   final projectPath = "${Directory.current.path}/lib";
 
-  String nameFile = 'create_post';
+  String nameFile = 'chat_details_view';
 
   // قائمة المجلدات التي سيتم إنشاؤها
   final directories = [
@@ -22,10 +21,11 @@ void main() {
     // التحقق من وجود المجلد، وإن لم يكن موجودًا يتم إنشاؤه
     if (!directory.existsSync()) {
       directory.createSync(recursive: true);
-      log('Created: $dir ✔');
+      print('Created: $dir ✔');
     } else {
-      log('Directory already exists: $dir ');
+      print('Directory already exists: $dir ');
     }
   }
-  log('تم إنشاء المجلدات بنجاح ✔');
+  // ignore: avoid_print
+  print('تم إنشاء المجلدات بنجاح ✔');
 }

@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nabd/core/constants/assets_images.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
 import 'package:nabd/features/home/presentation/view/home_view.dart';
+import 'package:nabd/features/messages_view/presentation/view/messages_view.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 import 'package:nabd/core/util/colors.dart';
 
@@ -19,21 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List<Widget> _buildScreens() {
     return [
       HomeView(),
-      Scaffold(
-        backgroundColor: AppColors.primaryColor,
-        
-        body: Container(
-          margin: EdgeInsets.only(bottom: 25.h(context)),
-          decoration: BoxDecoration(
-            color: AppColors.whiteColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(40.r(context)),
-              bottomRight: Radius.circular(40.r(context)),
-            ),
-          ),
-          child: Center(child: Text('chat')),
-        ),
-      ),
+      MessagesView(),
       Scaffold(
         backgroundColor: AppColors.primaryColor,
         body: Container(
