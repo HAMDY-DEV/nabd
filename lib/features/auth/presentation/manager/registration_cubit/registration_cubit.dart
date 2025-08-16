@@ -8,7 +8,8 @@ import 'package:nabd/features/auth/presentation/manager/registration_cubit/regis
 class RegistrationCubit extends Cubit<RegistrationState> {
   RegistrationCubit() : super(RegistrationInitial());
 
-  static RegistrationCubit get(BuildContext context) => BlocProvider.of(context);
+  static RegistrationCubit get(BuildContext context) =>
+      BlocProvider.of(context);
   void register({
     required String email,
     required String password,
@@ -31,6 +32,8 @@ class RegistrationCubit extends Cubit<RegistrationState> {
                 'uid': onValue.user!.uid,
                 'verifiedAccount': 'false',
                 'deviceToken': await firebase.getFcmToken(),
+                'photo':
+                    'https://firebasestorage.googleapis.com/v0/b/sehety-1.appspot.com/o/defaultPhoto%2Fsimple-user-default-icon-free-png.webp?alt=media&token=4a5f596f-e7d0-469e-acc7-844300d13ca1',
               },
             );
             emit(RegistrationSuccess());

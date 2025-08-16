@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nabd/core/constants/assets_images.dart';
 import 'package:nabd/core/functions/routing.dart';
 import 'package:nabd/core/util/colors.dart';
 import 'package:nabd/core/util/responsive_layout.dart';
@@ -52,6 +51,7 @@ class MessagesView extends StatelessWidget {
             child: Column(
               children: [
                 CustomTextFormField(
+                  controller: TextEditingController(),
                   prefixIcon: Icon(Icons.search, color: AppColors.blackColor),
                   suffixIcon: Icon(Icons.mic_none, color: AppColors.blackColor),
                   hintText: 'Search "Your Frined"',

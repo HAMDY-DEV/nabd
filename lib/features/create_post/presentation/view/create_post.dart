@@ -133,6 +133,13 @@ class CreatePostView extends StatelessWidget {
 
                           TextFormField(
                             controller: descriptionController,
+                            onChanged: (value) {
+                              (context as Element).markNeedsBuild();
+                            },
+                            textAlign: TextAlign.start,
+                            textDirection: getTextDirection(
+                              descriptionController.text,
+                            ),
                             maxLines: 8,
                             validator: (value) {
                               if (value == null || value.isEmpty) {

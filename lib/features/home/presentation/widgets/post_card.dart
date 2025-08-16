@@ -220,9 +220,12 @@ class PostCard extends StatelessWidget {
               textAlign: TextAlign.start,
               postModel.description,
               textDirection: getTextDirection(postModel.description),
-
               maxLines: 5,
-              style: getBodyStyle(context, fontWeight: FontWeight.w600),
+              style: getBodyStyle(
+                context,
+                fontWeight: FontWeight.w600,
+                fontSize: 12.sp(context),
+              ),
             ),
           ],
         ),

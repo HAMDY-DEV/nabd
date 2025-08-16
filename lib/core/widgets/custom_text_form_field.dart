@@ -11,7 +11,7 @@ class CustomTextFormField extends StatelessWidget {
   final Color? fillColor;
   final bool filled;
   final bool obscureText;
-  final TextEditingController? controller;
+  final TextEditingController controller;
   final String? Function(String?)? validator;
   final TextStyle? hintStyle;
   final TextStyle? style;
@@ -28,7 +28,7 @@ class CustomTextFormField extends StatelessWidget {
     required this.filled,
     required this.obscureText,
 
-    this.controller,
+    required this.controller,
     this.validator,
     this.hintStyle,
     this.style,
@@ -43,6 +43,8 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: obscureText,
       onChanged: onChanged,
       maxLines: maxLins,
+      textAlign: TextAlign.start,
+      textDirection: getTextDirection(controller.text),
       style:
           style ??
           getBodyStyle(
